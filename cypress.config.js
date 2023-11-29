@@ -11,4 +11,8 @@ module.exports = defineConfig({
     defaultCommandTimeout: 30000,
     requestTimeout: 20000
   },
+  setupNodeEvents(on, config) {
+    require('@cypress/grep/src/plugin')(config)
+    return config
+  },
 })

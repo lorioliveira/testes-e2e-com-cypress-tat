@@ -6,7 +6,7 @@ describe('Cenarios onde authentication e uma pre-condicao', () => {
     cy.intercept('GET', '**/notes').as('getNotes')
     cy.sessionLogin()
   })
-  // ---------
+  // -----CRUD - NOTA----
   it('CRUD nota', () => {
     const noteDescription = faker.lorem.words(4)
 
@@ -22,7 +22,7 @@ describe('Cenarios onde authentication e uma pre-condicao', () => {
     cy.deleteNote(updatedNoteDescription)
     cy.wait('@getNotes')
   })
-  // ---------
+  // ----FORM CARTAO CREDITO----
   it('Submeter o form de pagamento', () => {
     cy.intercept('POST', '**/prod/billing').as('paymentRequest')
 
@@ -33,8 +33,8 @@ describe('Cenarios onde authentication e uma pre-condicao', () => {
       .its('state')
       .should('be.equal', 'Complete')
   })
-  // ---------
-  it('Log out', () => {
+  // ---- LOGOUT-----
+  it('logs out', { tags: '@desktop-and-tablet' }, () => {
     cy.visit('/')
     cy.wait('@getNotes')
     if (Cypress.config('viewportWidth') < Cypress.env('viewportWidthBreakpoint')) {
