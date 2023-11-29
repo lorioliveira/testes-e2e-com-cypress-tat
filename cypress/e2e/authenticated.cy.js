@@ -1,4 +1,5 @@
 /* eslint-disable linebreak-style */
+/// <reference path="../support/commands.d.ts" />
 import { faker } from '@faker-js/faker/locale/en'
 
 describe('Cenarios onde authentication e uma pre-condicao', () => {
