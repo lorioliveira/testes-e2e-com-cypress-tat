@@ -36,7 +36,7 @@ describe('Cenarios onde authentication e uma pre-condicao', () => {
   // ---- LOGOUT-----
   it('logs out', { tags: '@desktop-and-tablet' }, () => {
     cy.visit('/')
-    cy.wait(2000)
+    cy.wait('@getNotes')
     cy.contains('.nav a', 'Logout').click()
     cy.get('#email').should('be.visible')
   })
