@@ -4,8 +4,9 @@ module.exports = defineConfig({
   chromeWebSecurity: false,
   projectId: '1v3u84',
   e2e: {
-    baseUrl: 'https://www.ticketmaster.com.br/event/jonasbrothers',
-    // baseUrl:'https://notes-serverless-app.com',
+    // URL do ticket dos Jonas comentado
+    // baseUrl: 'https://www.ticketmaster.com.br/event/jonasbrothers',
+    baseUrl:'https://notes-serverless-app.com',
     env: {
       viewportWidthBreakpoint: 768,
     },
